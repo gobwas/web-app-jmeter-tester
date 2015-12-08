@@ -5,9 +5,11 @@
 
 	"jmeter": "jmeter",
 
-	"target": "/tmp/target",
-	"tmp": "/tmp",
-	"report": "/tmp",
+	"dir": {
+		"target": "/tmp/target",
+		"tmp": "/tmp",
+		"report": "/tmp",
+	},
 
 	"plan": {
 		"pure": {

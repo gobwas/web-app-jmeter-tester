@@ -8,7 +8,7 @@
 	"dir": {
 		"target": "/tmp/target",
 		"tmp": "/tmp",
-		"report": "/tmp",
+		"report": "/tmp"
 	},
 
 	"plan": {

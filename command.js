@@ -242,7 +242,7 @@ function report(reports, input, name, callback) {
 	var tpl;
 
 	tpl = _.template(
-		"java -jar " + config.cmd_runner + " " +
+		config.cmd_runner + " " +
 		"--tool Reporter --generate-<%= type %> \"<%= output %>\" " +
 		"--input-jtl \"<%= input %>\" --plugin-type <%= plugin %>" +
 		"<% _.forEach(options, function(value, option) { %> --<%= option %> <%= value %><% }); %>"

@@ -330,7 +330,7 @@ function source(servers, template, level, output, name, callback) {
 							[
 								function(next) {
 									// create empty perfmon file
-									fs.open(perfmonPath, "wx", function (err, fd) {
+									fs.open(perfmonPath, "w", function (err, fd) {
 										if (err) {
 											return next(err);
 										}

@@ -1,0 +1,328 @@
+{
+	"timeout": 240,
+	"plan": {
+		"pure": {
+			"template": "./src/pure.ejs",
+			"server": [
+				{
+					"name": "c++",
+					"bin": "/Users/sergejkamardin/dev/lite/cpp/ExWWWServer/ExTestWWWServer 4100 localhost 3000",
+					"host": "localhost",
+					"port": 4100
+				},
+				{
+					"name": "spray.scala",
+					"bin": "java -jar /Users/sergejkamardin/dev/lite/spray/target/scala-2.11/lite.jar",
+					"host": "localhost",
+					"port": 8080,
+					"disabled": false
+				},
+				{
+					"name": "vanilla.go",
+					"bin": "/Users/sergejkamardin/go/src/github.com/gobwas/lite/lite",
+					"host": "localhost",
+					"port": 4002
+				},
+				{
+					"name": "hyper.rs",
+					"bin": "/Users/sergejkamardin/dev/lite/hyper.rs/target/release/hyp",
+					"host": "localhost",
+					"port": 4000
+				},
+				{
+					"name": "vanilla.js",
+					"bin": "PORT=4001 /Users/sergejkamardin/.nvm/versions/node/v5.1.1/bin/node /Users/sergejkamardin/dev/lite/daemon/pure.js",
+					"host": "localhost",
+					"port": 4001,
+					"disabled": true
+				},
+				{
+					"name": "vanilla.cluster.js",
+					"bin": "PORT=4011 /Users/sergejkamardin/.nvm/versions/node/v5.1.1/bin/node /Users/sergejkamardin/dev/lite/daemon/pure.cluster.js",
+					"host": "localhost",
+					"port": 4011
+				},
+				{
+					"name": "vanilla.old.js",
+					"bin": "PORT=4701 /Users/sergejkamardin/.nvm/versions/node/v0.12.7/bin/node /Users/sergejkamardin/dev/lite/daemon/pure.js",
+					"host": "localhost",
+					"port": 4701,
+					"disabled": true
+				},
+				{
+					"name": "vanilla.cluster.old.js",
+					"bin": "PORT=4711 /Users/sergejkamardin/.nvm/versions/node/v0.12.7/bin/node /Users/sergejkamardin/dev/lite/daemon/pure.cluster.js",
+					"host": "localhost",
+					"port": 4711
+				}
+			],
+			"env": {
+				"serverAgent": "java -jar /usr/local/Cellar/jmeter/2.13/libexec/serveragent/CMDRunner.jar --tool PerfMonAgent"
+			},
+			"level": {
+				"test": {
+					"threads": 1,
+					"ramp": 1,
+					"loop": 1
+				},
+				"long": {
+					"threads": 50,
+					"ramp": 10,
+					"loop": 18000
+				},
+				"lite": {
+					"threads": 50,
+					"ramp": 5,
+					"loop": 12000
+				},
+				"medium": {
+					"threads": 50,
+					"ramp": 1,
+					"loop": 100
+				},
+				"hard": {
+					"threads": 100,
+					"ramp": 1,
+					"loop": 12000
+				}
+			}
+		},
+		"greeting": {
+			"template": "./src/greeting.ejs",
+			"server": [
+				{
+					"name": "c++",
+					"bin": "/Users/sergejkamardin/dev/lite/cpp/ExWWWServer/ExTestWWWServer 4101 localhost 3000",
+					"host": "localhost",
+					"port": 4101
+				},
+				{
+					"name": "spray.scala",
+					"bin": "java -jar /Users/sergejkamardin/dev/lite/spray/target/scala-2.11/lite.jar",
+					"host": "localhost",
+					"port": 8080
+				},
+				{
+					"name": "vanilla.go",
+					"bin": "/Users/sergejkamardin/go/src/github.com/gobwas/lite/lite",
+					"host": "localhost",
+					"port": 4002
+				},
+				{
+					"name": "hyper.rs",
+					"bin": "/Users/sergejkamardin/dev/lite/hyper.rs/target/release/hyp",
+					"host": "localhost",
+					"port": 4000
+				},
+				{
+					"name": "vanilla.cluster.js",
+					"bin": "PORT=4011 /Users/sergejkamardin/.nvm/versions/node/v5.1.1/bin/node /Users/sergejkamardin/dev/lite/daemon/pure.cluster.js",
+					"host": "localhost",
+					"port": 4011
+				},
+				{
+					"name": "vanilla.cluster.old.js",
+					"bin": "PORT=4711 /Users/sergejkamardin/.nvm/versions/node/v0.12.7/bin/node /Users/sergejkamardin/dev/lite/daemon/pure.cluster.js",
+					"host": "localhost",
+					"port": 4711
+				},
+				{
+					"name": "nickel.rs",
+					"bin": "/Users/sergejkamardin/dev/lite/nickel.simple.rs/target/release/lite",
+					"host": "localhost",
+					"port": 3004,
+					"disabled": true
+				},
+				{
+					"name": "iron.rs",
+					"bin": "/Users/sergejkamardin/dev/lite/iron.simple.rs/target/release/lite",
+					"host": "localhost",
+					"port": 3007,
+					"disabled": true
+				},
+				{
+					"name": "hapi.js",
+					"bin": "PORT=3005 /Users/sergejkamardin/.nvm/versions/node/v4.1.0/bin/node /Users/sergejkamardin/dev/lite/daemon/web.simple.hapi.js",
+					"host": "localhost",
+					"port": 3005,
+					"disabled": true
+				},
+				{
+					"name": "express.js",
+					"bin": "PORT=3006 /Users/sergejkamardin/.nvm/versions/node/v4.1.0/bin/node /Users/sergejkamardin/dev/lite/daemon/web.simple.express.js",
+					"host": "localhost",
+					"port": 3006,
+					"disabled": true
+				},
+				{
+					"name": "hapi.cluster.js",
+					"bin": "PORT=3015 /Users/sergejkamardin/.nvm/versions/node/v4.1.0/bin/node /Users/sergejkamardin/dev/lite/daemon/web.simple.hapi.cluster.js",
+					"host": "localhost",
+					"port": 3015,
+					"disabled": true
+				},
+				{
+					"name": "express.cluster.js",
+					"bin": "PORT=3016 /Users/sergejkamardin/.nvm/versions/node/v4.1.0/bin/node /Users/sergejkamardin/dev/lite/daemon/web.simple.express.cluster.js",
+					"host": "localhost",
+					"port": 3016,
+					"disabled": true
+				},
+				{
+					"name": "hapi.cluster.old.js",
+					"bin": "PORT=3715 /Users/sergejkamardin/.nvm/versions/node/v0.12.7/bin/node /Users/sergejkamardin/dev/lite/daemon/web.simple.hapi.cluster.js",
+					"host": "localhost",
+					"port": 3715,
+					"disabled": true
+				},
+				{
+					"name": "express.cluster.old.js",
+					"bin": "PORT=3716 /Users/sergejkamardin/.nvm/versions/node/v0.12.7/bin/node /Users/sergejkamardin/dev/lite/daemon/web.simple.express.cluster.js",
+					"host": "localhost",
+					"port": 3716,
+					"disabled": true
+				}
+			],
+			"env": {
+				"serverAgent": "java -jar /usr/local/Cellar/jmeter/2.13/libexec/serveragent/CMDRunner.jar --tool PerfMonAgent"
+			},
+			"level": {
+				"test": {
+					"threads": 1,
+					"ramp": 1,
+					"loop": 1
+				},
+				"long": {
+					"threads": 50,
+					"ramp": 10,
+					"loop": 16000
+				},
+				"lite": {
+					"threads": 50,
+					"ramp": 5,
+					"loop": 8000
+				},
+				"medium": {
+					"threads": 50,
+					"ramp": 1,
+					"loop": 1000
+				},
+				"hard": {
+					"threads": 100,
+					"ramp": 1,
+					"loop": 8000
+				}
+			}
+		},
+		"render": {
+			"template": "./src/render.ejs",
+			"server": [
+				{
+					"name": "c++",
+					"bin": "/Users/sergejkamardin/dev/lite/cpp/ExWWWServer/ExTestWWWServer 4102 localhost 3000",
+					"host": "localhost",
+					"port": 4102
+				},
+				{
+					"name": "spray.scala",
+					"bin": "java -jar /Users/sergejkamardin/dev/lite/spray/target/scala-2.11/lite.jar",
+					"host": "localhost",
+					"port": 8080
+				},
+				{
+					"name": "vanilla.go",
+					"bin": "/Users/sergejkamardin/go/src/github.com/gobwas/lite_tcp/lite_tcp",
+					"host": "localhost",
+					"port": 8000
+				},
+				{
+					"name": "hapi.js",
+					"bin": "/Users/sergejkamardin/.nvm/versions/node/v4.1.0/bin/node /Users/sergejkamardin/dev/lite/daemon/web.js",
+					"host": "localhost",
+					"port": 3002,
+					"disabled": true
+				},
+				{
+					"name": "hapi.cluster.js",
+					"bin": "PORT=3012 /Users/sergejkamardin/.nvm/versions/node/v4.1.0/bin/node /Users/sergejkamardin/dev/lite/daemon/web.cluster.js",
+					"host": "localhost",
+					"port": 3012
+				},
+				{
+					"name": "hapi.cluster.old.js",
+					"bin": "PORT=3712 /Users/sergejkamardin/.nvm/versions/node/v0.12.7/bin/node /Users/sergejkamardin/dev/lite/daemon/web.cluster.js",
+					"host": "localhost",
+					"port": 3012
+				},
+				{
+					"name": "iron.rs",
+					"bin": "/Users/sergejkamardin/dev/lite/iron.rs/target/release/lite",
+					"host": "localhost",
+					"port": 3001,
+					"disabled": true
+				},
+				{
+					"name": "nickel.rs",
+					"bin": "/Users/sergejkamardin/dev/lite/nickel.rs/target/release/lite",
+					"host": "localhost",
+					"port": 3003,
+					"disabled": true
+				}
+			],
+			"env": {
+				"serverAgent": "java -jar /usr/local/Cellar/jmeter/2.13/libexec/serveragent/CMDRunner.jar --tool PerfMonAgent",
+				"templater": "node /Users/sergejkamardin/dev/lite/node/lib/renderer.js"
+			},
+			"level": {
+				"test": {
+					"threads": 1,
+					"ramp": 1,
+					"loop": 1
+				},
+				"long": {
+					"threads": 50,
+					"ramp": 10,
+					"loop": 4000
+				},
+				"lite": {
+					"threads": 50,
+					"ramp": 5,
+					"loop": 1000
+				},
+				"medium": {
+					"threads": 50,
+					"ramp": 1,
+					"loop": 1000
+				},
+				"hard": {
+					"threads": 100,
+					"ramp": 1,
+					"loop": 1000
+				}
+			}
+		}
+	},
+	"report": [
+		{
+			"type": "csv",
+			"plugin": [
+				"AggregateReport",
+				"TransactionsPerSecond",
+				"ResponseTimesPercentiles",
+				"ResponseTimesOverTime",
+				"ResponseTimesDistribution"
+			],
+			"options": {}
+		},
+		{
+			"type": "png",
+			"plugin": [
+				"ResponseTimesOverTime"
+			],
+			"options": {
+				"width": 2560,
+				"height": 1600
+			}
+		}
+	]
+}

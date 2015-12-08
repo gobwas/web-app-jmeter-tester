@@ -1,0 +1,24 @@
+{
+  "name": "web-app-jmeter-tester",
+  "version": "0.1.0",
+  "description": "",
+  "main": "command.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^1.5.0",
+    "chalk": "^1.1.1",
+    "cli-spinner": "^0.2.1",
+    "debug": "^2.2.0",
+    "ejs": "^2.3.4",
+    "humanize-duration": "^3.3.0",
+    "lodash": "^3.10.1",
+    "murmurhash": "0.0.2",
+    "q": "^1.4.1",
+    "salvator": "^0.2.0",
+    "yargs": "^3.31.0"
+  }
+}

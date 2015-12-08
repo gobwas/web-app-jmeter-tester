@@ -1,5 +1,11 @@
 {
 	"timeout": 240,
+
+	"_cmd_runner": "/usr/local/Cellar/jmeter/2.13/libexec/lib/ext/CMDRunner.jar",
+	"cmd_runner": "/home/gobwas/jmeter_plugins/lib/ext/CMDRunner.jar",
+
+	"jmeter": "jmeter",
+
 	"plan": {
 		"pure": {
 			"template": "./src/pure.ejs",

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 var exec       = require("child_process").exec,
-	config     = require("./config.json"),
 	debug      = require("debug"),
 	_          = require("lodash"),
 	async      = require("async"),
@@ -18,6 +17,8 @@ var argv = require('yargs')
     .usage('Usage: $0 -p [string] -l [string] --prepare')
     // .demand(['p'])
     .argv;
+
+var config = require(argv.c);
 
 ['SIGINT', 'SIGTERM', 'uncaughtException'].forEach(function(signal) {
 	process.on(signal, function(err) {
@@ -241,7 +242,7 @@ function report(reports, input, name, callback) {
 	var tpl;
 
 	tpl = _.template(
-		"java -jar /usr/local/Cellar/jmeter/2.13/libexec/lib/ext/CMDRunner.jar " +
+		"java -jar " + config.cmd_runner + " " +
 		"--tool Reporter --generate-<%= type %> \"<%= output %>\" " +
 		"--input-jtl \"<%= input %>\" --plugin-type <%= plugin %>" +
 		"<% _.forEach(options, function(value, option) { %> --<%= option %> <%= value %><% }); %>"
@@ -280,7 +281,7 @@ function report(reports, input, name, callback) {
 }
 
 function start(input, output, callback) {
-	command("jmeter -n -t " + input + " -l " + output, { timeout: config.timeout * 60 * 1000 }, callback);
+	command(config.jmeter + " -n -t " + input + " -l " + output, { timeout: config.timeout * 60 * 1000 }, callback);
 }
 
 function source(servers, template, level, output, name, callback) {
@@ -376,7 +377,7 @@ function source(servers, template, level, output, name, callback) {
 					}
 
 					if (!argv.prepare) {
-						command("jmeter -n -t " + path + " -l \"" + output + "\"", { timeout: config.timeout * 60 * 1000 }, callback);
+						command(config.jmeter + " -n -t " + path + " -l \"" + output + "\"", { timeout: config.timeout * 60 * 1000 }, callback);
 					} else {
 						var rl = readline.createInterface({
 						  input: process.stdin,

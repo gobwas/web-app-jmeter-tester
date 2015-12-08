@@ -254,7 +254,7 @@ function report(reports, input, name, callback) {
 			async.eachSeries(def.plugin, function(plugin, next) {
 				var data, output;
 
-				output = "./report/" + [ name, plugin, def.type ].join(".");
+				output = config.report + "/" + [ name, plugin, def.type ].join(".");
 
 				salvator.safe(output)
 					.then(function(output) {
@@ -311,8 +311,8 @@ function source(servers, template, level, output, name, callback) {
 
 						filename = murmurhash(tpl + JSON.stringify([ servers, template, level ]));
 
-						path = "./tmp/" + filename + ".jmx";
-						perfmonPath = "./target/" + name + ".perfmon.csv"; 
+						path = config.tmp + "/" + filename + ".jmx";
+						perfmonPath = config.target + "/" + name + ".perfmon.csv"; 
 
 						data = {
 							servers: servers,
@@ -399,7 +399,7 @@ function source(servers, template, level, output, name, callback) {
 function run(name, plan, level, reports, cb) {
 	var input, output;
 
-	output = "./target/" + name + ".report.jtl";
+	output = config.target + "/" + name + ".report.jtl";
 
 	salvator.safe(output)
 		.then(function(output) {

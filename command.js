@@ -14,7 +14,7 @@ var exec       = require("child_process").exec,
 	logger;
 
 var argv = require('yargs')
-    .usage('Usage: $0 -p [string] -l [string] --prepare')
+    .usage('Usage: $0 -c [string] -p [string] -l [string] --prepare')
     // .demand(['p'])
     .argv;
 
